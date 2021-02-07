@@ -1,0 +1,48 @@
+{
+  "name": "Paulmann BLE Light control",
+  "version": "0.1.0",
+  "slug": "Paulmann-ble",
+  "description": "Manage Paulmann BLE Lights",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "eufy": {
+      "username": "mail@example.org",
+      "password": "iliketurtles"
+    },
+    "mqtt": {
+      "url": "mqtt://192.168.x.x:1883",
+      "username": "homeassistant",
+      "password": "homeassistant",
+      "keepalive": 60
+    },
+    "log_level": "info"
+  },
+  "schema": {
+    "eufy": {
+      "username": "str",
+      "password": "str"
+    },
+    "mqtt": {
+      "url": "str",
+      "username": "str?",
+      "password": "str?",
+      "keepalive": "int?"
+
+    },
+    "log_level": "list(error|warn|info|http|verbose|debug|silly)"
+  },
+  "stage": "experimental",
+  "url": "https://github.com/mjekovec2/paulmann-lights",
+  "map": [
+    "share:rw"
+  ],
+  "hassio_role": "default",
+  "hassio_api": true
+}
